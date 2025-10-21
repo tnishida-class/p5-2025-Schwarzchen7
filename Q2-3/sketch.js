@@ -46,8 +46,8 @@ function setup(){
   rect(0,0,152,108);
   
   //白いスター（簡単のため円になる）
-  const x=152/12;
-  const y=108/10;
+  const x=(height*0.76)/12;//ネットで調べた比例
+  const y=(height*0.54)/10;
   for(i=0;i<11;i++){
     for(j=0;j<9;j++){
       if((i+j)%2===0){
