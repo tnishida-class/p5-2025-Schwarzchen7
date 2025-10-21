@@ -1,4 +1,4 @@
-// ギリシャ国旗（ほかの国旗に挑戦してもOK）
+```// ギリシャ国旗（ほかの国旗に挑戦してもOK）
 function setup() {
   createCanvas(270, 180);
   noStroke();
@@ -20,4 +20,40 @@ function setup() {
   fill(255);
   rect(d * 2, 0, d, size);
   // BLANK[2] 十字を完成させよう
+}```
+
+
+//アメリカ国旗
+function setup(){
+  createCanvas(380,200);
+  noStroke();
+  background(255);
+  const d=height/13;
+
+//バックグラウンドの赤と白の縞
+  for(let i=0;i<13;i++){
+    if(i%2==0){
+      fill(187,19,62);
+    }else{
+      fill(255);
+    }
+    noStroke();
+    rect(0,i*d,width,(i+1)*d);
+  }
+
+  //左上の青いバックグラウンド
+  fill(0,33,71);
+  rect(0,0,152,108);
+  
+  //白いスター（簡単のため円になる）
+  const x=152/12;
+  const y=108/10;
+  for(i=0;i<11;i++){
+    for(j=0;j<9;j++){
+      if((i+j)%2===0){
+        fill(255);
+        circle((i+1)*x,(j+1)*y,10);
+      }
+    }
+  }
 }
