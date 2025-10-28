@@ -25,8 +25,31 @@ function draw(){
   rect(0, groundY, width, height - groundY);
 
   // BLANK[1] キャラクターの左右移動
+  const normalSpeed=5;
+  const dashSpeed=10;
+  let currentSpeed = keyIsDown(SHIFT) ? dashSpeed : normalSpeed;
+  
+  vx=0;
+  if(keyIsDown(37)){
+    vx=-currentSpeed;
+  }
+  if(keyIsDown(39)){
+    vx=currentSpeed;
+  }
 
   // BLANK[2] 重力とジャンプ
+  vy+=g;
+  const r=size/2;
+  const onGround=(y+r>=groundY);
+
+  if(onGround){
+    y=groundY-r;
+    vy=0;
+
+    if(keyIsDown(32)){
+      vy=-20;
+    }
+  }
 
   // 速くなりすぎないように制限
   vx = constrain(vx, -20, 20);
