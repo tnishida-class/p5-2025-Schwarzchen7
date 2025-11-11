@@ -11,13 +11,23 @@ function setup(){
 
   // 横線を引く
   const n = 10;
-  for(let i = 0; i < n; i++){ line(0, height * i / n, width, height * i / n); }
+  for(let i = 0; i < n; i++){ 
+    line(0, height * i / n, width, height * i / n); 
+  }
 
   // ここからが本番
   fill(0);
-  const dx = width / scores.length;
+  const dx = width / scores.length;//点の間隔
   let px, py; // 線を引くために一つ前の点を覚えておく変数
   for(let i = 0; i < scores.length; i++){
     // BLANK[1]
+    const x=i*dx+dx/2;//次の点の座標
+    const y=scores[i];
+
+    circle(x,y,7);
+    line(px,py,x,y);
+
+    px=x;//今回の点の座標を前回の座標に記録しており
+    py=y;
   }
 }
