@@ -9,6 +9,7 @@ const jumpPower=-13;//ジャンプの強さ
 const PIPE_INTERVAL=90;//生成の時間間隔
 const PIPE_SPEED=3;//生成の速度
 
+
 function setup(){
   createCanvas(windowWidth,windowHeight);
 
